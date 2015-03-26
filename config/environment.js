@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'em-derby',
+    modulePrefix: 'js-derby',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
