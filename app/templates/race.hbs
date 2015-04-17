@@ -1,0 +1,22 @@
+<div class="containter">
+
+  <table class="table">
+    <thead>
+      <tr><th>Scouts</th></tr>
+    </thead>
+    <tbody>
+      {{#each scout in model.scouts}}
+      <tr><td>{{scout.fullName}}</td></tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <div class="form-inline">
+    {{input type="text" class="form-control" placeholder="First Name" value=newScout.firstName}}
+    {{input type="text" class="form-control" placeholder="Last Name" value=newScout.lastName}}
+    <button {{action 'addScout'}} class="submit btn btn-primary ">Add Scout</button>
+  </div>
+
+</div>
+
+{{outlet}}

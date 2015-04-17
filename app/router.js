@@ -6,6 +6,8 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('race' );
+  this.route( 'about' );
 });
 
 export default Router;

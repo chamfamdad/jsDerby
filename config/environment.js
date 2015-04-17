@@ -4,6 +4,13 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'js-derby',
     environment: environment,
+    contentSecurityPolicy: {
+      'connect-src': "'self' wss://*.firebaseio.com",
+      'script-src': "'self' *.googleapis.com *.bootstrapcdn.com",
+      'style-src': "'self' *.bootstrapcdn.com",
+      'font-src': "'self' *.bootstrapcdn.com"
+    },
+    firebase: 'https://jsderby.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
