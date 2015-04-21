@@ -1,5 +1,16 @@
 <div class="containter">
 
+  <div class="form-inline">
+    <div class="form-group">
+      <label class="control-label">Date</label>
+      <span class="form-control-static">{{model.date}}</span>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Time</label>
+      <span class="form-control-static">{{model.time}}</span>
+    </div>
+  </div>
+
   <table class="table">
     <thead>
       <tr><th>Scouts</th></tr>
@@ -16,6 +27,36 @@
     {{input type="text" class="form-control" placeholder="Last Name" value=newScout.lastName}}
     <button {{action 'addScout'}} class="submit btn btn-primary ">Add Scout</button>
   </div>
+
+  <div>
+    <button {{action 'start'}} class="submit btn btn-primary">Start</button>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Lane One</th>
+        <th>Lane Two</th>
+        <th>Winner</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model.matchups as |matchup index|}}
+      <tr>
+        <td>{{index}}: {{matchup.laneOne.fullName}}</td>
+        <td>{{matchup.laneTwo.fullName}}</td>
+        <td>
+          {{#if matchup.winner}}
+            {{matchup.winner.fullName}}
+          {{else}}
+            <button class="submit btn btn-primary">Lane One</button>
+            <button class="submit btn btn-primary">Lane Two</button>
+          {{/if}}
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
 
 </div>
 

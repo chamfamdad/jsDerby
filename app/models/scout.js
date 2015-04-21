@@ -2,12 +2,13 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
 
-  firstName: DS.attr( 'string' ),
+  race: DS.belongsTo( 'race' ),
 
+  firstName: DS.attr( 'string' ),
   lastName: DS.attr( 'string' ),
 
   fullName: function() {
-    return this.get( 'firstName' ) + ' ' + this.get( 'lastName' ).substr( 0, 1 );
+    return this.get( 'firstName' ).trim() + ' ' + this.get( 'lastName' ).trim();
   }.property( 'firstName', 'lastName' )
 
 });
